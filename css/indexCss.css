@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: #141414  ;
+    color: white;
+    font-family: sans-serif;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+body::-webkit-scrollbar{
+    width: 0.5em;
+}
+body::-webkit-scrollbar-track{
+    background:#141414;
+}
+body::-webkit-scrollbar-thumb{
+    background:#141414;
+}
+a{
+    text-decoration: none;
+}
+.root-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.handle ul{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.cfHandle{
+    color: #808080;
+    padding: 0.5em 1.5em 0.5em 2em;
+    border-radius: 20px 5px 20px 5px;
+    border-color: #808080;
+    border-width: 0.3em;
+    font-size: 1.25em;
+    font-weight: 700;
+    width: 100%;
+}
+.cfHandle:hover{
+    border-color: #0e598b;
+    transition: 0.5s;;
+    transform:translateX(2px);
+    transform:translateY(-2px);
+}
+
+.cfHandle-btn{
+    color: #808080;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    padding: 0.5em 1.5em 0.5em 2em;
+    border-style: solid;
+    border-radius: 20px 5px 20px 5px;
+    border-color: #808080;
+    border-width: 0.3em;
+    font-size: 1.5em;
+    font-weight: 1000;
+    margin-top: 15%;
+    transition: 0.5s;
+}
+.cfHandle-btn:hover{
+    border-color: #ddc330;
+    color: #ddc330;
+    transform:translateX(2px);
+    transform:translateY(-2px);
+}
+
+.emptyError{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e03b3b;
+    font-size: 1.25em;
+    font-weight: 300;
+    width: 100%;
+}
+
