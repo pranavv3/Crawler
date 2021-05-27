@@ -32,7 +32,7 @@ loginBtn.addEventListener('click' , () =>{
                 if (res.ok) {
                     console.log("SUCCESS");
                     handle.value = '';
-                    window.open('../html/profile.html', '_top');
+                    window.open('html/profile.html', '_top');
                 }
                 else {
                     empty.classList.add('empty');
