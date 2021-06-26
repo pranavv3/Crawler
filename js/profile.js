@@ -57,7 +57,8 @@ function showDetails(info){
         }
     }
     if(info.rating != undefined){
-        userdesc.style.color = ratingColor(info.rating, rating);
+        ratingColor(info.rating, rating);
+        userdesc.innerHTML += ratingColor(info.rating, userdesc)[1];
         rating.innerHTML += `${info.rating}`;
     }
     if(info.maxRating != undefined){
@@ -84,18 +85,19 @@ function showDetails(info){
 
 function ratingColor(userRating, ele){
     var usercolor = '';
-    if (userRating <= 1199) { usercolor = "#808080"; userdesc.innerHTML = `Newbie`}
-    else if (userRating <= 1399 && userRating >= 1200) { usercolor = "#008000"; userdesc.innerHTML = `Pupil`}
-    else if (userRating <= 1599 && userRating >= 1400) { usercolor = "#03A89E"; userdesc.innerHTML = `Specialist`}
-    else if (userRating <= 1899 && userRating >= 1600) { usercolor = "#0000FF"; userdesc.innerHTML = `Expert`}
-    else if (userRating <= 2199 && userRating >= 1900) { usercolor = "#AA00AA"; userdesc.innerHTML = `Candidate Master`}
-    else if (userRating <= 2299 && userRating >= 2200) { usercolor = "#FF8C00"; userdesc.innerHTML = `Master`}
-    else if (userRating <= 2399 && userRating >= 2300) { usercolor = "#FF8C00"; userdesc.innerHTML = `International Master`}
-    else if (userRating <= 2599 && userRating >= 2400) { usercolor = "#FF0000"; userdesc.innerHTML = `Grandmaster`}
-    else if (userRating <= 2899 && userRating >= 2600) { usercolor = "#FF0000"; userdesc.innerHTML = `International Grandmaster`}
-    else if (userRating >= 2900) { usercolor = "#FF0000"; userdesc.innerHTML = 'Legendary Grandmaster'}
+    var catg = '';
+    if (userRating <= 1199) { usercolor = "#808080"; catg = `Newbie`}
+    else if (userRating <= 1399 && userRating >= 1200) { usercolor = "#008000"; catg = `Pupil`}
+    else if (userRating <= 1599 && userRating >= 1400) { usercolor = "#03A89E"; catg = `Specialist`}
+    else if (userRating <= 1899 && userRating >= 1600) { usercolor = "#0000FF"; catg = `Expert`}
+    else if (userRating <= 2199 && userRating >= 1900) { usercolor = "#AA00AA"; catg = `Candidate Master`}
+    else if (userRating <= 2299 && userRating >= 2200) { usercolor = "#FF8C00"; catg = `Master`}
+    else if (userRating <= 2399 && userRating >= 2300) { usercolor = "#FF8C00"; catg = `International Master`}
+    else if (userRating <= 2599 && userRating >= 2400) { usercolor = "#FF0000"; catg = `Grandmaster`}
+    else if (userRating <= 2899 && userRating >= 2600) { usercolor = "#FF0000"; catg = `International Grandmaster`}
+    else if (userRating >= 2900) { usercolor = "#FF0000"; catg = 'Legendary Grandmaster'}
     ele.style.color = usercolor;
-    return usercolor;
+    return [usercolor, catg];
 }
 
 function normalTime(val){
