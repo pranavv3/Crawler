@@ -1,3 +1,10 @@
+.nav .home :hover{
+    background-color: #141414;
+    padding: 3px 10px;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.6s;
+}
 .container-upsolve{
     display: flex;
     align-items: center;
