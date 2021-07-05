@@ -38,6 +38,8 @@ const friendof = document.querySelector(".friendof")
 const userdesc = document.querySelector(".userdesc")
 
 function showDetails(info){
+
+    strrating(info.rating);
     
     renderImage(info.titlePhoto, titlephoto);
     // renderImage(info.avatar, avatar);
@@ -117,3 +119,7 @@ function renderImage(path, ele) {
     img.src = path;
     ele.appendChild(img);
 }
+
+   function strrating(rating){
+    localStorage.setItem("rat",rating);
+   }
