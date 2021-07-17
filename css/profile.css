@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    background: #141414;
+    /* background: #141414; */
     color: white;
     font-family: sans-serif;
 }
@@ -30,7 +30,7 @@ li{
 }
 .container-profile {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
     width: 100%;
@@ -173,4 +173,39 @@ body {
 	text-transform: uppercase;
 	font-size: large;
 	font-weight: bold;
+}
+
+
+/* stats */
+.stats{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 120em;
+    /* border: 1px solid red; */
+}
+.stats > *{
+    height: 50em;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.box1{
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.box1 > * {
+    height: 100%;
+    width: 50%;
+    /* border: 1px solid red; */
+}
+.chart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
