@@ -275,6 +275,7 @@ function showstats() {
                 // console.log(key + " = " + value);
                 tags.push([key, value]);
             }
+            tags = tagss.sort(([a, b], [c, d]) => d - b || c - a);
             // levels
             for (let [key, value] of levelMap) {
                 // console.log(key + " = " + value);
