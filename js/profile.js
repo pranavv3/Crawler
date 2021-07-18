@@ -283,7 +283,7 @@ function showstats() {
                 // console.log(key + " = " + value);
                 levels.push([key, value]);
             }
-            levels = levels.sort(([a, b], [c, d]) => c.charCodeAt(0) - a.charCodeAt(0));
+            levels = levels.sort(([a, b], [c, d]) => c>a || b-d);
             // rated problems
             for (let [key, value] of probRatingMap) {
                 // console.log(key + " = " + value);
