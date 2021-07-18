@@ -177,25 +177,54 @@ body {
 
 
 /* stats */
-.stats{
+.chart{
     display: flex;
     align-items: center;
     justify-content: center;
+    height: auto;
+}
+.chart2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150em;
+}
+.stats{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
     flex-direction: column;
-    height: 120em;
+    height: auto;
     /* border: 1px solid red; */
 }
 .stats > *{
-    height: 50em;
     width: 100%;
     /* border: 1px solid red; */
+}
+.verdicts{
+    min-height: 25em;
+}
+.lang{
+    min-height: 25em;
+}
+.tags{
+    min-height: 40em;
+}
+.level{
+    min-height: 25em;
+}
+.probRating{
+    min-height: 25em;
+}
+.heatmap{
+    height: 12em;
 }
 .box1{
     display: flex;
     align-items:flex-start;
     justify-content: center;
     flex-direction: row;
-    height: 50%;
+    height: 25em;
     width: 100%;
     /* border: 1px solid red; */
 }
@@ -203,9 +232,4 @@ body {
     height: 100%;
     width: 50%;
     /* border: 1px solid red; */
-}
-.chart{
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
