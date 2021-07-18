@@ -137,12 +137,12 @@ function normalTime(val) {
     return formattedTime;
 }
 
-function timeConverter(UNIX_timestamp){
+function timeConverter(UNIX_timestamp) {
     var a = new Date(UNIX_timestamp * 1000);
     var year = a.getFullYear();
-    var month = a.getMonth()+1;
+    var month = a.getMonth() + 1;
     var date = a.getDate();
-    var final = year+"-"+month+"-"+date; 
+    var final = year + "-" + month + "-" + date;
     return final;
 }
 // console.log(timeConverter(1625976000));
@@ -189,8 +189,11 @@ probRating.push(["Rating", "Its Count"]);
 
 let heatmapMap = new Map();
 let heatmap = [];
+let minYear = 3000;
+let maxYear = 1800;
+
 function showstats() {
-    fetch(`${apiURL}user.status?handle=${CFHandleVal}&from=1&count=1000`)
+    fetch(`${apiURL}user.status?handle=${CFHandleVal}`)
         .then((res) => {
             if (res.ok) {
                 // console.log("SUCCESS for Unsolved Fetch");
@@ -217,7 +220,7 @@ function showstats() {
                 } else {
                     langMap.set(RES[i].programmingLanguage, 1);
                 }
-                if(RES[i].verdict=="OK"){
+                if (RES[i].verdict == "OK") {
                     for (var j = 0; j < RES[i].problem.tags.length; j++) {
                         if (tagsMap.has(RES[i].problem.tags[j])) {
                             tagsMap.set(
@@ -229,14 +232,11 @@ function showstats() {
                         }
                     }
                     let temp = RES[i].problem.index;
-                    if(temp.length==2){
-                        temp = temp.slice(0,1);
+                    if (temp.length == 2) {
+                        temp = temp.slice(0, 1);
                     }
                     if (levelMap.has(temp)) {
-                        levelMap.set(
-                            temp,
-                            levelMap.get(temp) + 1
-                        );
+                        levelMap.set(temp, levelMap.get(temp) + 1);
                     } else {
                         levelMap.set(temp, 1);
                     }
@@ -251,25 +251,27 @@ function showstats() {
                 }
                 let temp = timeConverter(RES[i].creationTimeSeconds);
                 if (heatmapMap.has(temp)) {
-                    heatmapMap.set(
-                        temp,
-                        heatmapMap.get(temp) + 1
-                    );
+                    heatmapMap.set(temp, heatmapMap.get(temp) + 1);
+                    minYear = Math.min(minYear, parseInt(temp.split("-")[0]));
+                    maxYear = Math.max(maxYear, parseInt(temp.split("-")[0]));
                 } else {
                     heatmapMap.set(temp, 1);
+                    minYear = Math.min(minYear, parseInt(temp.split("-")[0]));
+                    maxYear = Math.max(maxYear, parseInt(temp.split("-")[0]));
                 }
-
             }
             // verdicts
             for (let [key, value] of verdictMap) {
                 // console.log(key + " = " + value);
                 verdict.push([key, value]);
             }
+            verdict = verdict.sort(([a, b], [c, d]) => d - b || c - a);
             // lang
             for (let [key, value] of langMap) {
                 // console.log(key + " = " + value);
                 lang.push([key, value]);
             }
+            lang = lang.sort(([a, b], [c, d]) => d - b || c - a);
             // tags
             for (let [key, value] of tagsMap) {
                 // console.log(key + " = " + value);
@@ -292,19 +294,26 @@ function showstats() {
             for (let [key, value] of heatmapMap) {
                 // console.log(key + " = " + value);
                 let temp = key.split("-");
-                heatmap.push([new Date(
-                    parseInt(temp[0]),
-                    parseInt(temp[1]),
-                    parseInt(temp[2])
-                ), value]);
+                heatmap.push([
+                    new Date(
+                        parseInt(temp[0]),
+                        parseInt(temp[1]),
+                        parseInt(temp[2])
+                    ),
+                    value,
+                ]);
             }
-            console.log(heatmap);
+            // console.log(heatmap);
 
             google.charts.setOnLoadCallback(drawChartVerdict);
             google.charts.setOnLoadCallback(drawChartLang);
             google.charts.setOnLoadCallback(drawChartTags);
             google.charts.setOnLoadCallback(drawStuffLevel);
             google.charts.setOnLoadCallback(drawStuffProbRating);
+            let heiOfHeatmap = (maxYear - minYear + 1) * 9 + 5;
+            document.querySelector(
+                ".heatmap"
+            ).style.height = `${heiOfHeatmap}em`;
             google.charts.setOnLoadCallback(drawChart);
         })
         .catch(() => {
@@ -378,7 +387,6 @@ function drawChartTags() {
     chart.draw(data, options);
 }
 
-
 function drawStuffLevel() {
     var data = new google.visualization.arrayToDataTable(levels);
 
@@ -389,42 +397,8 @@ function drawStuffLevel() {
         },
         axes: {
             x: {
-                0: { side: "top", label: "Accepted Solutions"}, // Top x-axis.
-            },
-        },
-        bar: { groupWidth: "90%" },
-        chartArea: { backgroundColor: "#141414"},
-        backgroundColor: "#141414",
-        legend: {
-            textStyle: {
-                color: "white",
-            },
-            position: "none",
-        },
-        titleTextStyle: {
-            color: "white",
-        },
-    };
-    var chart = new google.charts.Bar(document.getElementById("top_x_divLevel"));
-    // Convert the Classic options to Material options.
-    chart.draw(data, google.charts.Bar.convertOptions(options));
-}
-
-
-function drawStuffProbRating() {
-    var data = new google.visualization.arrayToDataTable(probRating);
-    var options = {
-        width: 800,
-        chart: {
-            title: "Rated Problems Solved by " + CFHandleVal,
-        },
-        axes: {
-            x: {
                 0: { side: "top", label: "Accepted Solutions" }, // Top x-axis.
             },
-        },
-        hAxis: {
-            format: ''
         },
         bar: { groupWidth: "90%" },
         chartArea: { backgroundColor: "#141414" },
@@ -439,13 +413,47 @@ function drawStuffProbRating() {
             color: "white",
         },
     };
-    var chart = new google.charts.Bar(document.getElementById("top_x_divProbRating"));
+    var chart = new google.charts.Bar(
+        document.getElementById("top_x_divLevel")
+    );
     // Convert the Classic options to Material options.
     chart.draw(data, google.charts.Bar.convertOptions(options));
 }
 
-
-
+function drawStuffProbRating() {
+    var data = new google.visualization.arrayToDataTable(probRating);
+    var options = {
+        width: 800,
+        chart: {
+            title: "Rated Problems Solved by " + CFHandleVal,
+        },
+        axes: {
+            x: {
+                0: { side: "top", label: "Accepted Solutions" }, // Top x-axis.
+            },
+        },
+        hAxis: {
+            format: "",
+        },
+        bar: { groupWidth: "90%" },
+        chartArea: { backgroundColor: "#141414" },
+        backgroundColor: "#141414",
+        legend: {
+            textStyle: {
+                color: "white",
+            },
+            position: "none",
+        },
+        titleTextStyle: {
+            color: "white",
+        },
+    };
+    var chart = new google.charts.Bar(
+        document.getElementById("top_x_divProbRating")
+    );
+    // Convert the Classic options to Material options.
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+}
 
 function drawChart() {
     var dataTable = new google.visualization.DataTable();
@@ -458,7 +466,6 @@ function drawChart() {
     );
     var options = {
         title: "Submission Heatmap of " + CFHandleVal,
-        height: 350,
         calendar: {
             unusedMonthOutlineColor: {
                 stroke: "red",
@@ -466,15 +473,8 @@ function drawChart() {
                 strokeWidth: 2,
             },
         },
-        cellColor: {
-            stroke: "blue",
-            strokeOpacity: 1, // Make the borders half transparent.
-            strokeWidth: 1, // ...and two pixels thick.
-        },
-        focusedCellColor: {
-            stroke: "green",
-            strokeOpacity: 0.8,
-            strokeWidth: 3,
+        colorAxis: {
+            colors: ["#66DE93", "#064420"],
         },
     };
 

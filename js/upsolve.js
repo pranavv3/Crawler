@@ -9,7 +9,7 @@ let contestsList = null;
 const CFHandleVal = localStorage.getItem('cfval');
 window.addEventListener('load', () => {
     //Unsolved
-    fetch(`${apiURL}user.status?handle=${CFHandleVal}&from=1&count=1000`)
+    fetch(`${apiURL}user.status?handle=${CFHandleVal}`)
     .then(res => {
         if(res.ok){
             // console.log("SUCCESS for Unsolved Fetch");
@@ -57,7 +57,7 @@ async function showUpsolveProblems(conLis){
         if(obj.phase==="BEFORE")continue;
         let done = [];
         await delay(1000);
-        fetch(`${apiURL}contest.status?contestId=${obj.id}&from=1&count=100&handle=${CFHandleVal}`)
+        fetch(`${apiURL}contest.status?contestId=${obj.id}&from=1&count=1000&handle=${CFHandleVal}`)
         .then((res) => {
             if (res.ok) {
                 console.log("SUCCESS for Upsolve Fetch-2");
