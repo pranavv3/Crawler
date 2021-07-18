@@ -100,10 +100,10 @@ function ratingColor(userRating, ele) {
     } else if (userRating <= 1899 && userRating >= 1600) {
         usercolor = "#0000FF";
         catg = `Expert`;
-    } else if (userRating <= 2199 && userRating >= 1900) {
+    } else if (userRating <= 2099 && userRating >= 1900) {
         usercolor = "#AA00AA";
         catg = `Candidate Master`;
-    } else if (userRating <= 2299 && userRating >= 2200) {
+    } else if (userRating <= 2299 && userRating >= 2100) {
         usercolor = "#FF8C00";
         catg = `Master`;
     } else if (userRating <= 2399 && userRating >= 2300) {
@@ -112,10 +112,10 @@ function ratingColor(userRating, ele) {
     } else if (userRating <= 2599 && userRating >= 2400) {
         usercolor = "#FF0000";
         catg = `Grandmaster`;
-    } else if (userRating <= 2899 && userRating >= 2600) {
+    } else if (userRating <= 2999 && userRating >= 2600) {
         usercolor = "#FF0000";
         catg = `International Grandmaster`;
-    } else if (userRating >= 2900) {
+    } else if (userRating >= 3000) {
         usercolor = "#FF0000";
         catg = "Legendary Grandmaster";
     }
