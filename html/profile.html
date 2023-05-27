@@ -1,63 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Profile</title>
     <!-- <link rel="icon" href="">  For icon in the tab TODO-->
-    <link rel="stylesheet" href="../css/profile.css">
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="../css/profile.css" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
     <!-- Navigation bar -->
     <header>
-        <div class="nav">
-            <ul>
-                <li class="home"><a class="search-another" href="../index.html"><img src="../img/home.png" alt="" width="29" height="29"></a></li>
-                <li class="profile-nav"><a class="active" href="profile.html">Profile</a></li>
-                <li class="upsolve"><a href="upsolve.html">Upsolve</a></li>
-                <li class="page-3"><a href="random.html">Practice</a></li>
-            </ul>
-        </div>
+      <div class="nav">
+        <ul>
+          <li class="home">
+            <a class="search-another" href="../index.html"
+              ><img src="../img/home.png" alt="" width="29" height="29"
+            /></a>
+          </li>
+          <li class="profile-nav">
+            <a class="active" href="profile.html">Profile</a>
+          </li>
+          <li class="upsolve"><a href="upsolve.html">Upsolve</a></li>
+          <li class="page-3"><a href="random.html">Practice</a></li>
+        </ul>
+      </div>
     </header>
     <div class="container-profile">
-        <div class="stats">
-            <div class="box1">
-                <div class="verdicts chart" id="piechart_3d_verdicts"></div>
-                <div class="lang chart" id="piechart_3d_lang"></div>
-            </div>
-            <div class="tags chart" id="donutchartTags"></div>
-            <div class="level chart" id="top_x_divLevel"></div>
-            <div class="probRating chart" id="top_x_divProbRating"></div>
-            <div class="heatmap chart2" id="calendar_basic"></div>
+      <div class="stats">
+        <div class="box1">
+          <div class="verdicts chart" id="piechart_3d_verdicts"></div>
+          <div class="lang chart" id="piechart_3d_lang"></div>
         </div>
-        <div class="details">
-            <div class="profile-card">
-                <div class="card-header">
-                    <div class="titlephoto_NorCol">
-                        <span class="titlephoto"></span>
-                    </div>
-                    <div class="handle_NorCol"><span class="profile-handle"></span></div>
-                    <div class="desc"><span class="userdesc"></span></div>
-                </div>
-                <div class="card-footer">
-                    <ul class="detbox">
-                        <li class="detailsbox"><div class="detailsbox avatar_NorCol"><span class="detailsbox avatar"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox email_NorCol"><span class="detailsbox email"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox fullname_NorCol"><span class="detailsbox fullname"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox rating_NorCol">Rating : <span class="detailsbox rating"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox maxrating_NorCol">Max Rating : <span class="detailsbox maxrating"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox countrycity_NorCol">From : <span class="detailsbox countrycity"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox organisatation_NorCol"><span class="detailsbox organisatation"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox contribution_NorCol">Contribution : <span class="detailsbox contribution"></span></div></li>
-                        <li class="detailsbox"><div class="detailsbox lastseen_NorCol">Last Seen <span class="detailsbox lastseen"></span> ago</div></li>
-                        <li class="detailsbox"><div class="detailsbox friendof_NorCol">Friends Count : <span class="detailsbox friendof"></span></div></li>
-                    </ul>
-                </div>
+        <div class="tags chart" id="donutchartTags"></div>
+        <div class="level chart" id="top_x_divLevel"></div>
+        <div class="probRating chart" id="top_x_divProbRating"></div>
+        <div class="heatmap chart2" id="calendar_basic"></div>
+      </div>
+      <div class="details">
+        <div class="profile-card">
+          <div class="card-header">
+            <div class="titlephoto_NorCol">
+              <span class="titlephoto"></span>
             </div>
+            <div class="handle_NorCol">
+              <span class="profile-handle"></span>
+            </div>
+            <div class="desc"><span class="userdesc"></span></div>
+          </div>
+          <div class="card-footer">
+            <ul class="detbox">
+              <li class="detailsbox">
+                <div class="detailsbox avatar_NorCol">
+                  <span class="detailsbox avatar"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox email_NorCol">
+                  <span class="detailsbox email"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox fullname_NorCol">
+                  <span class="detailsbox fullname"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox rating_NorCol">
+                  Rating : <span class="detailsbox rating"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox maxrating_NorCol">
+                  Max Rating : <span class="detailsbox maxrating"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox countrycity_NorCol">
+                  From : <span class="detailsbox countrycity"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox organisatation_NorCol">
+                  <span class="detailsbox organisatation"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox contribution_NorCol">
+                  Contribution : <span class="detailsbox contribution"></span>
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox lastseen_NorCol">
+                  Last Seen <span class="detailsbox lastseen"></span> ago
+                </div>
+              </li>
+              <li class="detailsbox">
+                <div class="detailsbox friendof_NorCol">
+                  Friends Count : <span class="detailsbox friendof"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
     <script src="../js/profile.js"></script>
-</body>
+  </body>
 </html>

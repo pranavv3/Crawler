@@ -1,218 +1,217 @@
 * {
-    margin: 0;
-    padding: 0;
-    background: #141414;
-    color: white;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #141414;
+  color: white;
+  font-family: sans-serif;
 }
 input:focus,
 textarea:focus,
 select:focus {
-    outline: none;
+  outline: none;
 }
 body::-webkit-scrollbar {
-    width: 0.5em;
+  width: 0.5em;
 }
 body::-webkit-scrollbar-track {
-    background: #141414;
+  background: #141414;
 }
 body::-webkit-scrollbar-thumb {
-    background: #141414;
+  background: #141414;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
-li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style-type: none;
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
 }
 /* Navigation style starts*/
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 body {
-    margin: 0;
-    padding: 0;
-    background: #141414;
+  margin: 0;
+  padding: 0;
+  background: #141414;
 }
 .nav ul {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
-    background-color: #141414;
-    text-align: center;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  background-color: #141414;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }
 .nav li {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2em;
-    line-height: 40px;
-    height: 40px;
-    border-bottom: 1px solid #141414;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #141414;
 }
 .nav a {
-    text-decoration: none;
-    color: #fff;
-    display: inline-block;
-    letter-spacing: 0.5em;
-    border-radius: 0px 0px 15px 15px;
-    box-shadow: 0px 5px 20px rgba(255, 1, 1, 0.808);
-    text-transform: uppercase;
-    padding: 10px 20px;
-	margin: 10px;
-    position: relative;
-    z-index: 1;
-    transition-duration: 0.6s;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  letter-spacing: 0.5em;
+  border-radius: 0px 0px 15px 15px;
+  box-shadow: 0px 5px 20px rgba(255, 1, 1, 0.808);
+  text-transform: uppercase;
+  padding: 10px 20px;
+  margin: 10px;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.6s;
 }
 .nav a:hover {
-    background-color: #ddc330;
+  background-color: #ddc330;
 }
 .nav a.active {
-    background-color: #0e598b;
-    color: white;
-    cursor: default;
+  background-color: #0e598b;
+  color: white;
+  cursor: default;
 }
-.nav .home :hover{
-    background-color: #141414;
-    padding: 3px 10px;
-    position: relative;
-    z-index: 1;
-    transition-duration: 0.6s;
+.nav .home :hover {
+  background-color: #141414;
+  padding: 3px 10px;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.6s;
 }
 /* Navigation style end*/
 
 /* css for card */
-.container-practice{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-    padding-top: 4em;
-    padding-bottom: 4em;
-    /* border: 1px solid red; */
+.container-practice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  /* border: 1px solid red; */
 }
-.sub-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    margin: 2em;
+.sub-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 2em;
 }
-.just-text{
-    color: rgb(230, 114, 19);
-    font-size: x-large;
-    letter-spacing: 0.5em;
+.just-text {
+  color: rgb(230, 114, 19);
+  font-size: x-large;
+  letter-spacing: 0.5em;
 }
-.wait-text{
-    color: rgb(7, 124, 32);
+.wait-text {
+  color: rgb(7, 124, 32);
 }
-
 
 /* Css for card */
 .card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 280px;
-    width: 200px;
-    background-color: #17141d;
-    border-radius: 10px;
-    box-shadow: -1rem 0 3rem #000;
-    transition: 0.4s ease-out;
-    position: relative;
-    left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 280px;
+  width: 200px;
+  background-color: #17141d;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
+  transition: 0.4s ease-out;
+  position: relative;
+  left: 0px;
 }
 .card:not(:first-child) {
-    margin-left: -50px;
+  margin-left: -50px;
 }
 .card:hover {
-    transform: translateY(-20px);
-    transition: 0.4s ease-out;
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
 }
 .card:hover ~ .card {
-    position: relative;
-    left: 50px;
-    transition: 0.4s ease-out;
+  position: relative;
+  left: 50px;
+  transition: 0.4s ease-out;
 }
 .title {
-    color: rgb(240, 85, 85);
-    font-weight: 700;
-    font-size: xx-large;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+  color: rgb(240, 85, 85);
+  font-weight: 700;
+  font-size: xx-large;
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
 .bar {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    height: 5px;
-    width: 150px;
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  height: 5px;
+  width: 150px;
 }
 .emptybar {
-    background-color: #2e3033;
-    width: 100%;
-    height: 100%;
+  background-color: #2e3033;
+  width: 100%;
+  height: 100%;
 }
 .filledbar {
-    position: absolute;
-    top: 0px;
-    z-index: 3;
-    width: 0px;
-    height: 100%;
-    background: rgb(0, 154, 217);
-    background: linear-gradient(
-        90deg,
-        rgba(0, 154, 217, 1) 0%,
-        rgba(217, 147, 0, 1) 65%,
-        rgba(255, 186, 0, 1) 100%
-        );
-        transition: 0.6s ease-out;
-    }
-    .card:hover .filledbar {
-    width: 120px;
-    transition: 0.4s ease-out;
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  width: 0px;
+  height: 100%;
+  background: rgb(0, 154, 217);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 154, 217, 1) 0%,
+    rgba(217, 147, 0, 1) 65%,
+    rgba(255, 186, 0, 1) 100%
+  );
+  transition: 0.6s ease-out;
+}
+.card:hover .filledbar {
+  width: 120px;
+  transition: 0.4s ease-out;
 }
 .stroke {
-    stroke: white;
-    stroke-dasharray: 360;
-    stroke-dashoffset: 360;
-    transition: 0.6s ease-out;
+  stroke: white;
+  stroke-dasharray: 360;
+  stroke-dashoffset: 360;
+  transition: 0.6s ease-out;
 }
 .card:hover .stroke {
-    stroke-dashoffset: 100;
-    transition: 0.6s ease-out;
+  stroke-dashoffset: 100;
+  transition: 0.6s ease-out;
 }
-.inside{
-    font-size: large;
-    font-weight: 750;
-    color: silver;
-    /* border: 1px solid red; */
-    padding: 1em;
-    margin-top: 3em;
+.inside {
+  font-size: large;
+  font-weight: 750;
+  color: silver;
+  /* border: 1px solid red; */
+  padding: 1em;
+  margin-top: 3em;
 }
-.redirect{
-    /* border: 1px solid red; */
-    margin-top: 1em;
+.redirect {
+  /* border: 1px solid red; */
+  margin-top: 1em;
 }
-.card-1un{
-    display: flex;
+.card-1un {
+  display: flex;
 }
-.card-2un{
-    display: none;
+.card-2un {
+  display: none;
 }
-.card-3un{
-    display: none;
+.card-3un {
+  display: none;
 }
-.card-4un{
-    display: none;
+.card-4un {
+  display: none;
 }
-.card-5un{
-    display: none;
+.card-5un {
+  display: none;
 }
